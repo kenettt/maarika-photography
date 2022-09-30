@@ -1,6 +1,7 @@
 import { useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
 
+
 export default function GridGallery({ images,setIndex }) {
   const [imagesShownArray, setImagesShownArray] = useState(
     Array(images.length).fill(false)
