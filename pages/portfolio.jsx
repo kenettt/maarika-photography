@@ -1,8 +1,6 @@
-import Image from 'next/image'
 import photos from '../components/photos'
 import { useState } from 'react';
 import GridGallery from "../components/grid-gallery";
-import ImageGallery from 'react-image-gallery';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
