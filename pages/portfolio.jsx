@@ -1,12 +1,9 @@
 import photos from '../components/photos'
 import { useState } from 'react';
 import GridGallery from "../components/grid-gallery";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
-import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Link from 'next/link'
+import FsLightbox from 'fslightbox-react';
+
 
 export default function Portfolio() {
 
@@ -37,14 +34,12 @@ export default function Portfolio() {
             </div>
           </div>
           <div className="">
-            <GridGallery images={photos} setIndex={setIndex} />
-            <Lightbox
-              open={index >= 0}
-              slides={photos}
-              index={index}
-              close={() => setIndex(-1)}
-              plugins={[Fullscreen,Slideshow,Zoom]}
-            />
+            <GridGallery  images={photos} setIndex={setIndex} />
+            <FsLightbox
+              toggler={index > 0 && true}
+              sources={photos.map(item=>item.src)}
+              sourceIndex={index}
+              />
           </div>
         </div>
     );

@@ -7,6 +7,10 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      ...defaultTheme.screens,
+      '3xl': '2080px',
+    },
     extend: {
       backgroundImage: (theme) => ({
         hero: "url('/images/background/fog-nature-beauty.webp')",

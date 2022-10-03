@@ -1,54 +1,31 @@
-import { useState } from "react";
-import VisibilitySensor from "react-visibility-sensor";
-
+import Image from 'next/image'
 
 export default function GridGallery({ images,setIndex }) {
-  const [imagesShownArray, setImagesShownArray] = useState(
-    Array(images.length).fill(false)
-  );
-
-  const imageVisibleChange = (index, isVisible) => {
-    if (isVisible) {
-      setImagesShownArray((currentImagesShownArray) => {
-        currentImagesShownArray[index] = true;
-        return [...currentImagesShownArray];
-      });
-    }
-  };
-
   return (
     <div className="lg:grid lg:grid-cols-4 gap-1">
       {images &&
-        images.map(({src,className,objectFit}, index) => (
-          <VisibilitySensor
-            key={index}
-            partialVisibility={true}
-            offset={{ bottom: 80 }}
-            onChange={(isVisible) => imageVisibleChange(index, isVisible)}
-          >
+        images.map(({src,className,objectPosition}, index) => (
             <GridGalleryCard
+              key={index}
               imageUrl={src}
-              show={imagesShownArray[index]}
               className={className}
-              objectFit={objectFit}
+              objectPosition={objectPosition}
               index={index}
               setIndex={setIndex}
             />
-          </VisibilitySensor>
         ))}
     </div>
   );
 }
 
-function GridGalleryCard({ imageUrl, show, className,setIndex,index,objectFit }) {
-  
+function GridGalleryCard({ imageUrl, className,setIndex,index,objectPosition }) {
+
   return (
-    <div onClick={() => setIndex(index)}
-      className={` ${className} py-[1px] lg:py-0 relative transition ease-in duration-300 transform cursor-pointer ${
-        show ? "" : "translate-y-16 opacity-0" 
+    <div onClick={() => setIndex(index)} 
+      className={` ${className} py-[1px] first:min-h-[calc(100vh_-_52px)] screen h-[700px] 3xl:h-[1000px] lg:py-0 relative cursor-pointer
       }`}
     >
-      <img src={imageUrl} alt="" style={objectFit} className={`object-cover h-full`} />
+      <Image src={imageUrl} alt="" priority={index === 0 ? true : false} objectPosition={objectPosition}  layout="fill" className={`object-cover`} />
     </div>
   );
 }
