@@ -3,21 +3,35 @@ import { useState } from 'react';
 import GridGallery from "../components/grid-gallery";
 import Link from 'next/link'
 import FsLightbox from 'fslightbox-react';
+import Head from 'next/head'
 
+const images = photos.map(item=>item.src)
 
 export default function Portfolio() {
 
-    const [index, setIndex] = useState(-1);
+    const [lightboxController, setLightboxController] = useState({
+      toggler: false,
+      slide: -1
+      });
+      
+      function openLightboxOnSlide(number) {
+      setLightboxController({
+      toggler: !lightboxController.toggler,
+      slide: number
+      });
+      }
 
+      
     return (
-        <div className="p-2 lg:p-0 lg:max-w-[96%] mx-auto">
-          <div className="flex items-center sticky top-0 z-50  p-3 bg-white ">
+        <div className="">
+          <Head></Head>
+          <div className="flex items-center sticky top-0 z-50 md:px-6 p-3 bg-[#ffffffde]">
             <Link href="/" >
-             <a className="text-lg tracking-widest font-light font-europa">Maarika Kauksi Photography</a>
+             <a className="text-sm text-center md:text-start md:text-lg text-black tracking-widest font-light font-europa hidden md:block">Maarika Kauksi Photography</a>
             </Link>
-            <div className="tracking-widest space-x-3 md:space-x-10 text-lg font-medium font-europa ml-auto ">
+            <div className="tracking-widest space-x-3 md:space-x-10 text-sm lg:text-lg font-europa flex justify-center  w-full md:w-min md:ml-auto text-black">
               <Link href="/">
-                <a>Avalehlt</a>
+                <a>Avaleht</a>
               </Link>
               <Link href="/">
                 <a>About</a>
@@ -33,14 +47,12 @@ export default function Portfolio() {
               </Link>
             </div>
           </div>
-          <div className="">
-            <GridGallery  images={photos} setIndex={setIndex} />
+            <GridGallery images={photos} openLightboxOnSlide={openLightboxOnSlide} />
             <FsLightbox
-              toggler={index > 0 && true}
-              sources={photos.map(item=>item.src)}
-              sourceIndex={index}
+              toggler={lightboxController.toggler}
+              sources={images}
+              slide={lightboxController.slide + 1}
               />
           </div>
-        </div>
     );
 }
