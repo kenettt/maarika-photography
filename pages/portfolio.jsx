@@ -23,7 +23,7 @@ export default function Portfolio() {
 
       
     return (
-        <div className="">
+        <div className="max-w-[1840px] mx-auto">
           <Head></Head>
           <div className="flex items-center sticky top-0 z-50 md:px-6 p-3 bg-[#ffffffde]">
             <Link href="/" >
