@@ -23,13 +23,13 @@ export default function Portfolio() {
 
       
     return (
-        <div className="max-w-[1840px] mx-auto">
+        <div className=" mx-auto ">
           <Head></Head>
-          <div className="flex items-center sticky top-0 z-50 md:px-6 p-3 bg-[#ffffffde]">
+          <div className="flex items-center sticky top-0 z-50 md:px-6 p-3  -mb-[54px] ">
             <Link href="/" >
-             <a className="text-sm text-center md:text-start md:text-lg text-black tracking-widest font-light font-europa hidden md:block">Maarika Kauksi Photography</a>
+             <a className="text-sm text-center md:text-start md:text-lg text-white tracking-widest font-light font-europa hidden md:block">Maarika Kauksi Photography</a>
             </Link>
-            <div className="tracking-widest space-x-3 md:space-x-10 text-sm lg:text-lg font-europa flex justify-center  w-full md:w-min md:ml-auto text-black">
+            <div className="tracking-widest space-x-3 md:space-x-10 text-sm lg:text-lg font-europa flex justify-center  w-full md:w-min md:ml-auto text-white  ">
               <Link href="/">
                 <a>Avaleht</a>
               </Link>
