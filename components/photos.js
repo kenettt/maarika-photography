@@ -1,6 +1,6 @@
 const photo = [
-    { src: "/images/portfolio/DSC01776.webp", className:"col-span-4", size: { height:642, width:1280 }},
-    { src: "/images/portfolio/DSC01679.webp", className:"col-span-4 xl:col-span-2", size: { height:720, width:1080 }},
+    { src: "/images/portfolio/DSC01679.webp", className:"col-span-4 lg:max-h-[100vh] overflow-hidden", size: { height:720, width:1080 }},
+    { src: "/images/portfolio/DSC01776.webp", className:"col-span-4 xl:col-span-2 ", size: {  height:720, width:1080 }},
     { src: "/images/portfolio/DSC016888.webp",className:"col-span-4 xl:col-span-2", size: { height:720, width:1080 }},
     { src: "/images/portfolio/DSC03602.webp", className:"col-span-2 xl:col-span-1", portrait:true, size:{ height:1080, width:607 }},
     { src: "/images/portfolio/DSC03653.webp", className:"col-span-2 xl:col-span-1", portrait:true, size:{ height:1080, width:607 }},

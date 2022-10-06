@@ -25,7 +25,7 @@ export default function Portfolio() {
     return (
         <div className=" mx-auto ">
           <Head></Head>
-          <div className="flex items-center sticky top-0 z-50 md:px-6 p-3  -mb-[54px] ">
+          <div className="flex items-center sticky top-0 z-50 md:px-6 p-3  -mb-[54px] bg-gradient-to-b from-[#7b6c75] ">
             <Link href="/" >
              <a className="text-sm text-center md:text-start md:text-lg text-white tracking-widest font-light font-europa hidden md:block">Maarika Kauksi Photography</a>
             </Link>
