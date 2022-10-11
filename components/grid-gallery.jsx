@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function GridGallery({ images,openLightboxOnSlide }) {
   
   return (
-    <div className="sm:grid sm:grid-cols-4 gap-1">
+    <div className="sm:grid sm:grid-cols-4 gap-1" >
       {images &&
         images.map(({src,className,size}, index) => (
             <GridGalleryCard

@@ -1,9 +1,10 @@
 import photos from '../components/photos'
 import { useState } from 'react';
 import GridGallery from "../components/grid-gallery";
-import Link from 'next/link'
+import Header from "../components/header"
 import FsLightbox from 'fslightbox-react';
 import Head from 'next/head'
+import Footer from '../components/footer'
 
 const images = photos.map(item=>item.src)
 
@@ -23,36 +24,18 @@ export default function Portfolio() {
 
       
     return (
-        <div className=" mx-auto ">
+        <div>
           <Head></Head>
-          <div className="flex items-center sticky top-0 z-50 md:px-6 p-3  -mb-[54px] bg-gradient-to-b from-[#7b6c75] ">
-            <Link href="/" >
-             <a className="text-sm text-center md:text-start md:text-lg text-white tracking-widest font-light font-europa hidden md:block">Maarika Kauksi Photography</a>
-            </Link>
-            <div className="tracking-widest space-x-3 md:space-x-10 text-sm lg:text-lg font-europa flex justify-center  w-full md:w-min md:ml-auto text-white  ">
-              <Link href="/">
-                <a>Avaleht</a>
-              </Link>
-              <Link href="/">
-                <a>About</a>
-              </Link>
-              <Link href="/">
-                <a>Contact</a>
-              </Link>
-              <Link href="/">
-                <a>Blog</a>
-              </Link>
-              <Link href="/">
-                <a>Price</a>
-              </Link>
-            </div>
-          </div>
+            <Header />
             <GridGallery images={photos} openLightboxOnSlide={openLightboxOnSlide} />
             <FsLightbox
               toggler={lightboxController.toggler}
               sources={images}
               slide={lightboxController.slide + 1}
               />
+              <div className="fixed w-full bottom-0 z-20 px-6 py-5  bg-gradient-to-t from-[#7b6c75b5]">
+                <Footer />
+              </div>
           </div>
     );
 }
