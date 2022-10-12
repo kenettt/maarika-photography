@@ -1,9 +1,6 @@
 import Link from 'next/link'
 import { Dialog, Transition } from '@headlessui/react'
-import { MenuAlt2Icon } from '@heroicons/react/outline'
-
 import { Fragment, useState } from 'react'
-
 import { useRouter } from 'next/router'
 
 
@@ -74,7 +71,7 @@ const navigation = [
     }
   ]
 
-export default function header({className=""}) {
+export default function Header({className=""}) {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
