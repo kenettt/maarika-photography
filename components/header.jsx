@@ -71,7 +71,7 @@ const navigation = [
     }
   ]
 
-export default function Header({className=""}) {
+export default function Header({className="", color="text-white lg:text-gray-800"}) {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -83,9 +83,9 @@ export default function Header({className=""}) {
   }
 
     return (
-      <>
+      <div className={`${className}`}>
       <Transition.Root show={sidebarOpen} as={Fragment}>
-      <Dialog as="div" className="fixed inset-0 flex z-40 lg:hidden" onClose={setSidebarOpen}>
+      <Dialog as="div" className="fixed inset-0 flex z-20" onClose={setSidebarOpen}>
         <Transition.Child
           as={Fragment}
           enter="transition-opacity ease-linear duration-300"
@@ -150,8 +150,6 @@ export default function Header({className=""}) {
                   ) 
                   }
                 </div>
-
-               
                 <div>
                   <div className={`text-text flex items-center`}>
                     <div className='uppercase whitespace-nowrap text-xs font-medium text-black'>Lingid </div>
@@ -175,41 +173,35 @@ export default function Header({className=""}) {
         </Transition.Child>
       </Dialog>
     </Transition.Root>
-   {!sidebarOpen && <button
+    {!sidebarOpen &&
+      <div className=" max-w-[90px] w-full h-full lg:bg-[#ffd9d98f] z-10 fixed top-0">
+        <button
         type="button"
-        className="px-4 text-white focus:outline-none fixed top-2 left-2 mr-4 mt-4 z-10 lg:hidden"
+        className={`${color} focus:outline-none mt-4 flex justify-center w-full mt-6`}
         onClick={() => setSidebarOpen(true)}
       >
         <span className="sr-only">Open sidebar</span>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 lg:w-10 lg:h-10 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
 
-    </button>}
-    <div className={`${className} hidden lg:flex items-center sticky top-0 z-50 md:px-6 p-6 -mb-[77px] bg-gradient-to-b from-[#7b6c75b5]`}>
-        <Link href="/" >
-          <a className="text-sm text-center md:text-start md:text-lg text-white tracking-widest font-light font-europa hidden md:block">Maarika Kauksi Photography</a>
-        </Link>
-        <div className="tracking-widest space-x-3 md:space-x-10 text-sm lg:text-lg font-europa flex justify-center  w-full md:w-min md:ml-auto text-white  ">
-          <Link href="/">
-            <a>Avaleht</a>
-          </Link>
-          <Link href="/portfolio">
-            <a>Portfolio</a>
-          </Link>
-          <Link href="/minust">
-            <a>Minust</a>
-          </Link>
-          <Link href="/kontakt">
-            <a>Kontakt</a>
-          </Link>
-          <Link href="/">
-            <a>Hinnakiri</a>
-          </Link>
+    </button>
+      <div className="mt-20">
+         {navigation.map(link =>
+            <div className={`lg:flex items-center hidden`} key={link.name}>
+              <Link href={link.href}>
+                <a className='flex justify-center flex-col items-center py-3 w-full text-gray-800'>
+                  <div className='ml-[5px]'>
+                    <link.icon className='h-auto w-[20px]' router={router} current={`${link.current}`} />
+                  </div>
+                  <div className={`font-medium whitespace-nowrap text-sm`}>{link.name}</div>
+                </a>
+              </Link>
+            </div> 
+          )}
         </div>
       </div>
-    </>
-    
-
+    }
+    </div>
     );
 }

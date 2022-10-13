@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export default function Footer() {
+export default function Footer({hidden="", className="justify-between"}) {
     return (
-        <div className="text-white flex space-x-2 w-full justify-between items-end ">
-            <div className="font-europa tracking-widest">
+        <div className={`${className} text-white flex space-x-2 w-full items-end `}>
+            <div className={`${hidden} font-europa tracking-widest lg:ml-[80px]`}>
                 <Link href="/">
                 <a>
                     <div className="text-md"> Maarika Kauksi </div>

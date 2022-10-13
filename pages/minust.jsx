@@ -19,9 +19,9 @@ export default function Home() {
       </Head>
       <Header />
       <section className="w-full min-h-screen bg-center bg-cover bg-aboutHero "> 
-        <div className="h-full p-8  ">
-          <div className="text-white font-medium font-europa flex flex-col items-end justify-between  md:max-w-[90%] my-auto mx-auto ">
-            <div dangerouslySetInnerHTML={{ __html:text}} className="md:mx-10 text-white md:max-w-[700px] font-europa tracking-widest font-medium text-sm md:text-xl lg:ml-auto h-full flex items-center text-center lg:text-start py-10" />
+        <div className="min-h-screen p-4 lg:p-8 flex flex-col">
+          <div className="text-white font-medium font-europa flex flex-col items-center lg:items-end my-auto ">
+            <div dangerouslySetInnerHTML={{ __html:text}} className="md:mx-10 text-white md:max-w-[700px] font-europa tracking-widest font-medium text-xs md:text-xl lg:ml-auto h-full flex items-center text-center lg:text-start py-10" />
 
             </div>
 
