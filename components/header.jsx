@@ -190,11 +190,11 @@ export default function Header({className="", color="text-white lg:text-gray-800
          {navigation.map(link =>
             <div className={`lg:flex items-center hidden`} key={link.name}>
               <Link href={link.href}>
-                <a className='flex justify-center flex-col items-center py-3 w-full text-gray-800'>
+                <a className='flex justify-center flex-col items-center py-3 w-full text-gray-800 font-europa'>
                   <div className='ml-[5px]'>
                     <link.icon className='h-auto w-[20px]' router={router} current={`${link.current}`} />
                   </div>
-                  <div className={`font-medium whitespace-nowrap text-sm`}>{link.name}</div>
+                  <div className={`whitespace-nowrap text-sm`}>{link.name}</div>
                 </a>
               </Link>
             </div> 
