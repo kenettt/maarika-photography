@@ -1,10 +1,11 @@
 import Header from "../components/header";
+import Footer from "../components/footer"
 
 export default function Hinnakiri() {
     return (
-        <div className="bg-red-400">
+        <div className="">
             <Header />
-            <div className="h-screen bg-cover grayscale bg-priceHero bg-[center_90%] flex justfiy-center text-white filter"> 
+            <div className="min-h-screen bg-cover bg-priceHero bg-[center_90%] flex justfiy-center text-white filter"> 
                 <div className="flex flex-col justify-center items-center w-full font-europa ">
                     <div className="flex justify-center items-center w-full lg:w-[500px] lg:h-[150px] w-[300px] h-[100px] bg-[#7b5151ad] border-white border-4 rounded-lg text-3xl lg:text-5xl font-bold tracking-[0.2em]"> Hinnakiri </div>
                     <div className="text-center  mt-10 rounded-xl p-10 bg-[#7b5151ad] m-4">
@@ -20,7 +21,9 @@ export default function Hinnakiri() {
                     </div>
                 </div>
             </div>
-
+            <div className="fixed bottom-4 z-20 px-6 w-full">
+                <Footer  />
+            </div>
         </div>
     );
 }

@@ -25,17 +25,19 @@ export default function Portfolio() {
       
     return (
         <div>
-          <Head></Head>
             <Header />
-            <GridGallery images={photos} openLightboxOnSlide={openLightboxOnSlide} />
-            <FsLightbox
-              toggler={lightboxController.toggler}
-              sources={images}
-              slide={lightboxController.slide + 1}
-              />
-              <div className="fixed w-full bottom-0 z-20 px-6 py-5  bg-gradient-to-t from-[#7b6c75b5]">
-                <Footer />
-              </div>
+            <div className="min-h-screen w-full" >
+              <GridGallery images={photos} openLightboxOnSlide={openLightboxOnSlide} />
+              <FsLightbox
+                toggler={lightboxController.toggler}
+                sources={images}
+                slide={lightboxController.slide + 1}
+                />
+            </div>
+            <div className="fixed bottom-4 z-20 px-6 w-full">
+                <Footer  />
+            </div>
+
           </div>
     );
 }

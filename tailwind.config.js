@@ -16,7 +16,8 @@ module.exports = {
       backgroundImage: (theme) => ({
         hero: "url('/images/background/fog-nature-beauty.webp')",
         aboutHero: "linear-gradient(#737373a8, #737373a8), url(/images/background/maarika.webp)",
-        priceHero:"url('/images/portfolio/DSC08373.webp')"
+        priceHero:"url('/images/portfolio/DSC08373.webp')",
+        contactBackground:"url('/images/background/blob.svg')",
       }),
       fontFamily: {
         europa: ["europa", ...defaultTheme.fontFamily.sans],

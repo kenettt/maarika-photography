@@ -24,13 +24,13 @@ export default function Home() {
               <Link href="/minust">
                 <a>Minust</a>
               </Link>
-              <Link href="/">
+              <Link href="/kontakt">
                 <a>Kontakt</a>
               </Link>
-              <Link href="/">
+              {/* <Link href="/">
                 <a>Blog</a>
-              </Link>
-              <Link href="/">
+              </Link> */}
+              <Link href="/hinnakiri">
                 <a>Hinnakiri</a>
               </Link>
             </div>
