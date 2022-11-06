@@ -78,9 +78,9 @@ export default function Header({className="", color="text-white lg:text-gray-800
 
   const router = useRouter();
 
-  const setColor = function(href,ready,current) {
-    if(router.asPath === href || current) return "text-pink"
-    if(ready && router.asPath !== href) { return "text-[#5C5972] hover:text-[#FAF8FF]"} else { return "text-[#3F3C51] lg:hover:text-[#FAF8FF]" }
+  const setColor = function(href) {
+    if(router.asPath === href) return "text-pink"
+    if(router.asPath !== href) { return "text-[#5C5972] hover:text-[#FAF8FF]"} else { return "text-[#3F3C51] lg:hover:text-[#FAF8FF]" }
   }
 
     return (
@@ -140,11 +140,11 @@ export default function Header({className="", color="text-white lg:text-gray-800
                   {navigation.map(link =>
                     <div className={`flex items-center`} key={link.name}>
                       <Link href={link.href}>
-                        <a className='flex items-center py-3 w-full text-gray-800'>
+                        <a className='flex items-center py-3 w-full text-gray-800 hover:text-white'>
                           <div className='ml-[5px]'>
                             <link.icon className='h-auto w-[20px]' router={router} current={`${link.current}`} />
                           </div>
-                          <div className={`ml-3 font-medium whitespace-nowrap text-sm`}>{link.name}</div>
+                          <div className={`ml-3 font-medium whitespace-nowrap text-sm `}>{link.name}</div>
                         </a>
                       </Link>
                     </div>      
@@ -162,7 +162,7 @@ export default function Header({className="", color="text-white lg:text-gray-800
                           <div className='ml-[5px]'>
                             <link.icon className='h-[20px] w-[20px]' />
                           </div>
-                          <div className={`ml-3 font-medium whitespace-nowrap text-sm text-gray-800`}>{link.name}</div>
+                          <div className={`ml-3 font-medium whitespace-nowrap text-sm text-gray-800 hover:text-[#ffc8d7]`}>{link.name}</div>
                         </a>
                       </Link>
                     </div> 

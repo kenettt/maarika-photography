@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-export default function Footer({hidden="", className="justify-between text-white"}, color="fill-white") {
+export default function Footer({hidden="", className="justify-between text-white", color="fill-white"}) {
+    console.log(color)
     return (
         <div className={`${className} flex space-x-2 w-full items-end `}>
             <div className={`${hidden} font-europa tracking-widest lg:ml-[80px]`}>

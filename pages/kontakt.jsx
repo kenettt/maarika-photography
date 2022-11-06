@@ -54,8 +54,6 @@ export default function Kontakt() {
         <Head>
           <title>Kontakt</title>
           <meta name="description" content="Võtke minuga ühendust!" />
-          <link rel="icon" href="/favicon.ico" />
-          <link rel="canonical" href="https://www.vannitubailusaks.ee/kontakt" />
         </Head>
         <Header color="black" />
         <div className='min-h-screen flex flex-col'>
