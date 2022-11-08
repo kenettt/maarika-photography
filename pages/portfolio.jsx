@@ -26,7 +26,7 @@ export default function Portfolio() {
     return (
         <div>
             <Header />
-            <div className="min-h-screen w-full" >
+            <div className="min-h-screen w-full lg:pl-[90px]" >
               <GridGallery images={photos} openLightboxOnSlide={openLightboxOnSlide} />
               <FsLightbox
                 toggler={lightboxController.toggler}

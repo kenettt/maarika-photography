@@ -78,11 +78,6 @@ export default function Header({className="", color="text-white lg:text-gray-800
 
   const router = useRouter();
 
-  const setColor = function(href) {
-    if(router.asPath === href) return "text-pink"
-    if(router.asPath !== href) { return "text-[#5C5972] hover:text-[#FAF8FF]"} else { return "text-[#3F3C51] lg:hover:text-[#FAF8FF]" }
-  }
-
     return (
       <div className={`${className}`}>
       <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -107,7 +102,7 @@ export default function Header({className="", color="text-white lg:text-gray-800
           leaveFrom="translate-x-0"
           leaveTo="-translate-x-full"
         >
-          <div className="relative flex-1 flex flex-col max-w-[265px] w-full bg-[#ffd9d98f]">
+          <div className="relative flex-1 flex flex-col max-w-[265px] w-full bg-[#E7CCCB]">
             <Transition.Child
               as={Fragment}
               enter="ease-in-out duration-300"
@@ -131,18 +126,18 @@ export default function Header({className="", color="text-white lg:text-gray-800
                 </button>
               </div>
             </Transition.Child>
-            <nav className="px-4 h-full shadow-lg mt-4">
+            <nav className="h-full shadow-lg mt-4">
               <div className='h-full flex flex-col max-h-[600px] justify-between'>
                 <Link href="/" >
-                  <a className="text-sm text-center text-white tracking-widest font-medium font-europa max-w-[200px]">Maarika Kauksi Photography</a>
+                  <a className="text-sm text-center text-white tracking-widest font-medium font-europa max-w-[200px] mx-auto hover:scale-110">Maarika Kauksi Photography</a>
                 </Link>
-                <div>
+                <div className="pl-4">
                   {navigation.map(link =>
                     <div className={`flex items-center`} key={link.name}>
                       <Link href={link.href}>
-                        <a className='flex items-center py-3 w-full text-gray-800 hover:text-white'>
+                        <a className={`${router.asPath === link.href ? "text-white" : "text-gray-800"} flex items-center py-3 w-full hover:bg-gradient-to-l from-[#ffd9d98f]`}>
                           <div className='ml-[5px]'>
-                            <link.icon className='h-auto w-[20px]' router={router} current={`${link.current}`} />
+                            <link.icon className='h-auto w-[20px]' />
                           </div>
                           <div className={`ml-3 font-medium whitespace-nowrap text-sm `}>{link.name}</div>
                         </a>
@@ -151,18 +146,18 @@ export default function Header({className="", color="text-white lg:text-gray-800
                   ) 
                   }
                 </div>
-                <div>
+                <div className="pl-4">
                   <div className={`text-text flex items-center`}>
                     <div className='uppercase whitespace-nowrap text-xs font-medium text-black'>Lingid </div>
                   </div>
                   {socials.map(link => 
                     <div className={`flex items-center`} key={link.name}>
                       <Link href={link.link}>
-                        <a className='flex items-center py-3 w-full' target="_blank" rel="noopener">
+                        <a className='flex items-center py-3 w-full text-gray-800 hover:bg-gradient-to-l from-[#ffd9d98f]' target="_blank" rel="noopener">
                           <div className='ml-[5px]'>
                             <link.icon className='h-[20px] w-[20px]' />
                           </div>
-                          <div className={`ml-3 font-medium whitespace-nowrap text-sm text-gray-800 hover:text-[#ffc8d7]`}>{link.name}</div>
+                          <div className={`ml-3 font-medium whitespace-nowrap text-sm`}>{link.name}</div>
                         </a>
                       </Link>
                     </div> 
@@ -174,8 +169,8 @@ export default function Header({className="", color="text-white lg:text-gray-800
         </Transition.Child>
       </Dialog>
     </Transition.Root>
-    {!sidebarOpen &&
-      <div className=" max-w-[90px] w-full h-full lg:bg-[#ffd9d98f] z-10 fixed top-0">
+    
+      <div className=" max-w-[90px] w-full h-full lg:bg-[#E7CCCB] z-10 fixed top-0">
         <button
         type="button"
         className={`${color} focus:outline-none mt-7 sm:mt-5 flex justify-center w-full mt-6`}
@@ -191,7 +186,7 @@ export default function Header({className="", color="text-white lg:text-gray-800
          {navigation.map(link =>
             <div className={`lg:flex items-center hidden`} key={link.name}>
               <Link href={link.href}>
-                <a className='flex justify-center flex-col items-center py-3 w-full text-gray-800 font-europa'>
+                <a className={`${router.asPath === link.href ? "text-white" : "text-gray-800"} flex justify-center flex-col items-center py-3 w-full font-europa hover:bg-gradient-to-t from-[#ffd9d98f]`}>
                   <div className='ml-[5px]'>
                     <link.icon className='h-auto w-[20px]' router={router} current={`${link.current}`} />
                   </div>
@@ -202,7 +197,7 @@ export default function Header({className="", color="text-white lg:text-gray-800
           )}
         </div>
       </div>
-    }
+    
     </div>
     );
 }
