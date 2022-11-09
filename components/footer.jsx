@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer({hidden="", className="justify-between text-white", color="fill-white"}) {
    
     return (
-        <div className={`${className} flex space-x-2 w-full items-end `}>
+        <div className={`${className} flex w-full items-end `}>
             <div className={`${hidden} font-europa tracking-widest lg:ml-[80px]`}>
                 <Link href="/">
                 <a>

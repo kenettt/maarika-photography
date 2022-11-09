@@ -102,7 +102,7 @@ export default function Header({className="", color="text-white lg:text-gray-800
           leaveFrom="translate-x-0"
           leaveTo="-translate-x-full"
         >
-          <div className="relative flex-1 flex flex-col max-w-[265px] w-full bg-[#E7CCCB]">
+          <div className="relative flex-1 flex flex-col max-w-[265px] w-full bg-[#ffd8df]">
             <Transition.Child
               as={Fragment}
               enter="ease-in-out duration-300"
@@ -129,13 +129,13 @@ export default function Header({className="", color="text-white lg:text-gray-800
             <nav className="h-full shadow-lg mt-4">
               <div className='h-full flex flex-col max-h-[600px] justify-between'>
                 <Link href="/" >
-                  <a className="text-sm text-center text-white tracking-widest font-medium font-europa max-w-[200px] mx-auto hover:scale-110">Maarika Kauksi Photography</a>
+                  <a className="text-sm text-center text-gray-800 tracking-widest font-medium font-europa max-w-[200px] mx-auto">Maarika Kauksi Photography</a>
                 </Link>
                 <div className="pl-4">
                   {navigation.map(link =>
                     <div className={`flex items-center`} key={link.name}>
                       <Link href={link.href}>
-                        <a className={`${router.asPath === link.href ? "text-white" : "text-gray-800"} flex items-center py-3 w-full hover:bg-gradient-to-l from-[#ffd9d98f]`}>
+                        <a className={`${router.asPath === link.href ? "text-[#3d7691]" : "text-gray-800"} flex items-center py-3 w-full hover:bg-gradient-to-l from-[#ffb8b8e6]`}>
                           <div className='ml-[5px]'>
                             <link.icon className='h-auto w-[20px]' />
                           </div>
@@ -153,7 +153,7 @@ export default function Header({className="", color="text-white lg:text-gray-800
                   {socials.map(link => 
                     <div className={`flex items-center`} key={link.name}>
                       <Link href={link.link}>
-                        <a className='flex items-center py-3 w-full text-gray-800 hover:bg-gradient-to-l from-[#ffd9d98f]' target="_blank" rel="noopener">
+                        <a className='flex items-center py-3 w-full text-gray-800 hover:bg-gradient-to-l from-[#ffb8b8e6]' target="_blank" rel="noopener">
                           <div className='ml-[5px]'>
                             <link.icon className='h-[20px] w-[20px]' />
                           </div>
@@ -170,7 +170,7 @@ export default function Header({className="", color="text-white lg:text-gray-800
       </Dialog>
     </Transition.Root>
     
-      <div className=" max-w-[90px] w-full h-full lg:bg-[#E7CCCB] z-10 fixed top-0">
+      <div className=" max-w-[90px] w-full h-full lg:bg-[#ffd8df] z-10 fixed top-0">
         <button
         type="button"
         className={`${color} focus:outline-none mt-7 sm:mt-5 flex justify-center w-full mt-6`}
@@ -186,7 +186,7 @@ export default function Header({className="", color="text-white lg:text-gray-800
          {navigation.map(link =>
             <div className={`lg:flex items-center hidden`} key={link.name}>
               <Link href={link.href}>
-                <a className={`${router.asPath === link.href ? "text-white" : "text-gray-800"} flex justify-center flex-col items-center py-3 w-full font-europa hover:bg-gradient-to-t from-[#ffd9d98f]`}>
+                <a className={`${router.asPath === link.href ? "text-[#3d7691]" : "text-gray-800"} flex justify-center flex-col items-center py-3 w-full font-europa hover:bg-gradient-to-b from-[#ffb8b8e6]`}>
                   <div className='ml-[5px]'>
                     <link.icon className='h-auto w-[20px]' router={router} current={`${link.current}`} />
                   </div>
