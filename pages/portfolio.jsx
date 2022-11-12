@@ -26,17 +26,15 @@ export default function Portfolio() {
     return (
         <div>
             <Header />
-            <div className="min-h-screen w-full lg:pl-[90px]" >
-              <GridGallery images={photos} openLightboxOnSlide={openLightboxOnSlide} />
+            <div className="min-h-screen h-screen w-full flex flex-col" >
+              <GridGallery images={photos} openLightboxOnSlide={openLightboxOnSlide} className="relative"/>
               <FsLightbox
                 toggler={lightboxController.toggler}
                 sources={images}
                 slide={lightboxController.slide + 1}
                 />
             </div>
-            <div className="fixed bottom-4 z-20 px-6 w-full">
-                <Footer  />
-            </div>
+          
 
           </div>
     );

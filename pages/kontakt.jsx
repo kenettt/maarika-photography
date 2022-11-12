@@ -56,7 +56,7 @@ export default function Kontakt() {
           <meta name="description" content="Võtke minuga ühendust!" />
         </Head>
         <Header color="black" />
-        <div className='min-h-screen flex flex-col'>
+        <div className='min-h-screen h-screen flex flex-col p-4 lg:pr-4 lg:pl-8 py-4'>
           <div className='lg:ml-[80px] p-5 lg:p-6 flex sm:flex-row flex-col items-end justify-end bg-gradient-to-l from-[#ffd9d98f] space-x-2 space-y-1'>
             <a href='mailto:maarikaphoto@gmail.com' className='flex font-light font-europa tracking-widest items-center space-x-2'>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 lg:w-6 h-4 lg:h-6">
@@ -138,9 +138,7 @@ export default function Kontakt() {
               </div>
             </form>
           </div>
-      </div>
-      <div className="fixed bottom-4 z-20 px-6 w-full">
-        <Footer className="text-black justify-between" color="fill-black" />
+        <Footer className="z-20 w-full text-black justify-between " color="fill-black hover:fill-[#ffc8d7] hover:scale-125" />
       </div>
       </div>
     );
