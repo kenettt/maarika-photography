@@ -4,7 +4,7 @@ export default function Footer({hidden="", className="justify-between text-white
    
     return (
         <div className={`${className} flex w-full items-end `}>
-            <div className={`${hidden} font-europa tracking-widest lg:ml-[80px]`}>
+            <div className={`${hidden} font-europa tracking-widest lg:ml-[78px]`}>
                 <Link href="/">
                 <a>
                     <div className="text-sm md:text-md"> Maarika Kauksi </div>

@@ -31,7 +31,7 @@ export default function Home() {
         <link rel="preload" as="image" href="/images/background/fog-nature-beauty.webp" />
       </Head>
       <Header className="md:hidden" color="text-white" />
-      <div className="flex flex-col w-full h-screen bg-[center_20%] bg-cover bg-hero text-white font-light font-europa p-4">
+      <div className="flex flex-col w-full h-screen min-h-screen bg-[center_20%] bg-cover bg-hero text-white font-light font-europa pr-4 pl-8 py-4">
         <div className="h-full flex flex-col justify-center items-end text-end max-w-[90%] mx-auto w-full ">
           <div className="text-4xl"> Maarika Kauksi </div>
           <div className="text-lg tracking-widest mt-2">Photography</div>
