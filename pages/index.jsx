@@ -26,8 +26,9 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Maarika Kauksi Perefotograaf Viljandis</title>
-        <meta name="description" content="Pakun fotograafi teenust, perefotograaf,stuudio,passipilt,portree,loodus" />
+        <title>Maarika Kauksi Professionaalne Fotograaf Viljandis</title>
+        <meta name="description" content="Inimene on erakordselt loodud, nii kaunilt ja õrnalt. Ma toon selle eriliselt pildile 📸
+          Pulmas,perena,portreena või teie enda ideedega." />
         <link rel="preload" as="image" href="/images/background/fog-nature-beauty.webp" />
       </Head>
       <Header className="md:hidden" color="text-white" />

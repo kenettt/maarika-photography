@@ -16,11 +16,13 @@
     "fslightbox-react": "^1.6.2-2",
     "next": "12.3.1",
     "nodemailer": "^6.8.0",
+    "nprogress": "^0.2.0",
     "postcss": "^8.4.16",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-image-gallery": "^1.2.9",
     "react-visibility-sensor": "^5.1.1",
+    "sitemap": "^7.1.1",
     "tailwindcss": "^3.1.8",
     "yet-another-react-lightbox": "^2.1.1"
   },

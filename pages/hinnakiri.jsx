@@ -6,8 +6,8 @@ export default function Hinnakiri() {
     return (
         <div>
             <Head>
-              <title>Maarika Kauksi Perefotograaf Viljandis</title>
-              <meta name="description" content="Pakun fotograafi teenust, perefotograaf,stuudio,passipilt,portree,loodus" />
+              <title>Maarika Kauksi fototeenuste hinnakiri</title>
+              <meta name="description" content="Fotosessioon : 60€, Sisaldab kõiki õnnestunud fotosid digitaalsel kujul" />
               <link rel="preload" as="image" href="/images/portfolio/DSC08373.webp" />
             </Head>
             <Header />

@@ -4,7 +4,6 @@ import GridGallery from "../components/grid-gallery";
 import Header from "../components/header"
 import FsLightbox from 'fslightbox-react';
 import Head from 'next/head'
-import Footer from '../components/footer'
 
 const images = photos.map(item=>item.src)
 
@@ -25,6 +24,11 @@ export default function Portfolio() {
       
     return (
         <div>
+          <Head>
+            <title>Portfolio</title>
+            <meta name="description" content="Looduse võrratu võlu ja inimese kaunis ilu" />
+            <link rel="preload" as="image" href="/images/background/maarika.webp" />
+          </Head>
             <Header />
             <div className="min-h-screen h-screen w-full flex flex-col" >
               <GridGallery images={photos} openLightboxOnSlide={openLightboxOnSlide} className="relative"/>

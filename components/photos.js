@@ -48,9 +48,16 @@ const photo = [
     { src: "/images/portfolio/DSC00360.webp", className:"col-span-4 xl:col-span-2", size:{ height:820, width:1080 }},
     { src: "/images/portfolio/DSC00335.webp", className:"col-span-4 xl:col-span-2", size:{ height:720, width:1080 }},
     { src: "/images/portfolio/DSC00233.webp", className:"col-span-4 xl:col-span-2", size:{ height:720, width:1080 }},
-    { src: "/images/portfolio/DSC00162.webp", className:"col-span-4 xl:col-span-2", size:{ height:820, width:1080 }},
-    { src: "/images/portfolio/DSC00098.webp", className:"col-span-4 xl:col-span-2", size:{ height:820, width:1080 }},
+    { src: "/images/portfolio/DSC00162.webp", className:"col-span-4 xl:col-span-2", size:{ height:720, width:1080 }},
     { src: "/images/portfolio/DSC00023.webp", className:"col-span-4 xl:col-span-2", size:{ height:720, width:1080 }},
+    { src: "/images/portfolio/DSC00098.webp", className:"col-span-4 xl:col-span-2", size:{ height:920, width:1080 }},
+    { src: "/images/portfolio/DSC01470.webp", className:"col-span-4 xl:col-span-2", size:{ height:920, width:1080 }},
+    { src: "/images/portfolio/DSC01209.webp", className:"col-span-4 xl:col-span-1", size:{ height:1220, width:607 }},
+    { src: "/images/portfolio/DSC01188.webp", className:"col-span-4 xl:col-span-3", size:{ height:720, width:1080 }},
+    { src: "/images/portfolio/DSC01041.webp", className:"col-span-2", size:{ height:720, width:1080 }},
+
+    
+    
 ];
 
 const photos = photo.map((photo) => ({
