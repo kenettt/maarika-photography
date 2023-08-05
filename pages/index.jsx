@@ -17,10 +17,10 @@ const navlinks = [
   name:"Kontakt",
   href:"/kontakt"
 },
-// {
-//   name:"Hinnakiri",
-//   href:"/hinnakiri"
-// }
+{
+ name:"Hinnakiri",
+ href:"/hinnakiri"
+}
 ]
 
 export default function Home() {

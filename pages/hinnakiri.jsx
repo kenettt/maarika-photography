@@ -15,7 +15,7 @@ export default function Hinnakiri() {
                 <div className="flex flex-col justify-center items-center w-full font-europa h-full">
                     <div className="flex justify-center items-center w-full lg:w-[500px] lg:h-[150px] w-[300px] h-[100px] bg-[#7b5151ad] border-white border-4 rounded-lg text-3xl lg:text-5xl font-bold tracking-[0.2em]"> Hinnakiri </div>
                     <div className="text-center  mt-10 rounded-xl p-4 lg:p-10 bg-[#7b5151ad]">
-                        <div className="text-white tracking-widest text-xl sm:text-2xl lg:text-5xl mt-6 font-medium"> Fotosessioon :  </div>
+                        <div className="text-white tracking-widest text-xl sm:text-2xl lg:text-5xl mt-6 font-medium"> Fotosessioon : 120.-   </div>
                         <div className="text-xl lg:text-3xl mt-4">Sisaldab kõiki õnnestunud fotosid digitaalsel kujul</div>
                         <div className="text-sm lg:text-lg space-y-1 mt-4">
                             <div>Perekonnad 6 liikmelised või väiksemad</div>

@@ -1,31 +1,18 @@
 import Image from "next/image";
 
-const NextJsImage = ({ photo, imageProps, wrapperProps,layout }) => {
-    const { width, height } = photo;
-    const { src, alt, title, style, className, onClick } = imageProps;
-    const { style: wrapperStyle, ...restWrapperProps } = wrapperProps ?? {};
+export default function NextJsImage({
+    photo,
+    imageProps: { alt, title, sizes, className, onClick },
+    wrapperStyle,
+}) {
     return (
-        <div
-            style={{
-                width: style.width,
-                padding: style.padding,
-                marginBottom: style.marginBottom,
-                ...wrapperStyle
-            }}
-            onClick={onClick}
-            {...restWrapperProps}
-            className="cursor-pointer"
-        >
+        <div style={{ ...wrapperStyle, position: "relative" }}>
             <Image
-                src={src}
-                alt={alt}
-                title={title}
-                width={width}
-                height={height}
-                className={className}
+                fill
+                src={photo}
+                placeholder={"blurDataURL" in photo ? "blur" : undefined}
+                {...{ alt, title, sizes, className, onClick }}
             />
         </div>
     );
-};
-
-export default NextJsImage;
+}
