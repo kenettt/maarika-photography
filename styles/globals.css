@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'harmony';
+  font-family: "harmony";
   font-style: normal;
   font-weight: normal;
-  src: local('harmony'), url('/fonts/harmony.woff') format('woff');
-  }
+  src: local("harmony"), url("/fonts/harmony.woff") format("woff");
+}
 
 html,
 body {
