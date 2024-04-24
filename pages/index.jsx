@@ -48,7 +48,7 @@ export default function Home() {
         />
       </Head>
       <Header className="md:hidden" color="text-white" />
-      <div className="flex flex-col w-full h-screen min-h-screen bg-[center_20%] bg-cover bg-hero text-white font-light font-europa pr-4 pl-8 py-4">
+      <div className="flex flex-col w-full min-h-svh h-svh bg-[center_20%] bg-cover bg-hero text-white font-light font-europa pr-4 pl-8 py-4">
         <div className="h-full flex flex-col justify-center items-end text-end max-w-[90%] mx-auto w-full ">
           <div className="text-4xl"> Maarika Kauksi </div>
           <div className="text-lg tracking-widest mt-2">Photography</div>
@@ -68,7 +68,7 @@ export default function Home() {
           color="fill-white hover:fill-[#ffc8d7] hover:scale-125"
         />
       </div>
-      <div className="relative isolate overflow-hidden bg-white py-24 sm:py-32">
+      <div className="relative isolate overflow-hidden bg-white py-10 lg:py-32">
         <div
           className="absolute -top-80 left-[max(6rem,33%)] -z-10 transform-gpu blur-3xl sm:left-1/2 md:top-20 lg:ml-20 xl:top-3 xl:ml-56"
           aria-hidden="true"
@@ -82,7 +82,9 @@ export default function Home() {
           />
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <MailingList />
+          <div className="mb-5">
+            <MailingList />
+          </div>
           <div className="mx-auto max-w-2xl lg:mx-0">
             <p className="text-lg font-semibold leading-8 tracking-tight text-pink-400">
               Kaunid Mälestused, Püütud Pildina
