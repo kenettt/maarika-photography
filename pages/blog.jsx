@@ -61,10 +61,10 @@ export default function Home({ blogPosts }) {
       <section>
         <div className="bg-white pt-10 sm:pt-[70px] pb-8">
           <div className="lg:ml-48 flex flex-col items-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl text-center w-full">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl text-center w-full dark:text-black ">
               Igal hetkel on oma lugu
             </h1>
-            <div className="flex mt-10 mx-4 sm:text-lg justify-center font-semibold max-w-[700px] mx-auto flex-wrap">
+            <div className="flex mt-10 mx-4 sm:text-lg justify-center font-semibold max-w-[700px] mx-auto flex-wrap dark:text-black z-20">
               {kategooria.map((category, index) => (
                 <button
                   key={index}
@@ -144,7 +144,7 @@ export default function Home({ blogPosts }) {
                       </p>
                     </div>
                     <a
-                      className="font-medium mt-5 text-sm z-30"
+                      className="font-medium mt-5 text-sm z-20 dark:text-black"
                       href={`/blog/${slug}`}
                     >
                       Loe edasi

@@ -50,11 +50,11 @@ const BlogPost = ({ blogPost, slug }) => {
         <div className="lg:pl-[120px] pl-[30px] pr-[30px] pt-10 sm:pt-[70px] pb-8 max-w-[1600px] w-full mx-auto">
           <div className="flex justify-between items-center flex-wrap">
             <BreadCrumbs routes={[blogPost.attributes.pealkiri]} />
-            <div className="text-2xl lg:text-3xl text-center w-full mt-8">
+            <div className="text-2xl lg:text-3xl text-center w-full mt-8  dark:text-gray-900">
               {blogPost.attributes.pealkiri}
             </div>
           </div>
-          <div className="py-10 lg:text-xl text-center">
+          <div className="py-10 lg:text-xl text-center dark:text-gray-700">
             <BlocksRenderer content={blogPost.attributes.sisu} />
           </div>
           <div className="">

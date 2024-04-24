@@ -42,10 +42,10 @@ export default function MailingList() {
   }
 
   return (
-    <div className="flex justify-end pt-6 px-6 flex items-center">
+    <div className="flex justify-end pt-6 px-6 flex items-center dark:bg-white">
       <button
         onClick={openModal}
-        className="bg-[#ffd8df] hover:bg-[#efc2ca] text-gray-800 font-medium py-1 px-3 rounded-lg  transition"
+        className="bg-[#ffd8df] hover:bg-[#efc2ca] text-gray-800 font-medium py-1 px-3 rounded-lg transition "
       >
         Jälgi postitusi
       </button>
