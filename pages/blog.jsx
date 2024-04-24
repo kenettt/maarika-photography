@@ -144,7 +144,7 @@ export default function Home({ blogPosts }) {
                       </p>
                     </div>
                     <a
-                      className="font-medium mt-5 text-sm"
+                      className="font-medium mt-5 text-sm z-30"
                       href={`/blog/${slug}`}
                     >
                       Loe edasi
