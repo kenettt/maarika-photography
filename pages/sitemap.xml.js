@@ -1,10 +1,38 @@
 import { SitemapStream, streamToPromise } from "sitemap";
 const { Readable } = require("stream");
+import qs from "qs";
 
 function SiteMap() {}
 
 export async function getServerSideProps({ res }) {
-  const routes = ["/", "portfolio", "/hinnakiri", "/minust", "/kontakt"];
+  const query = qs.stringify({
+    fields: ["slug"],
+  });
+
+  const getPosts = await fetch(
+    `https://api.maarikakauksi.com/api/blogs?${query}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+
+  const posts = await getPosts.json();
+
+  const blogPageRoutes = posts.data.map(
+    (item) => `/blog/${item.attributes.slug}`
+  );
+
+  const routes = [
+    "/",
+    "portfolio",
+    "/hinnakiri",
+    "/minust",
+    "/kontakt",
+    ...blogPageRoutes,
+  ];
 
   const links = routes.map((route) => {
     return {

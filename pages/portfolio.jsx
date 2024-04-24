@@ -1,5 +1,4 @@
-import photos from "../components/photos";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import PhotoAlbum from "react-photo-album";
 import Header from "../components/header";
 import Head from "next/head";
@@ -11,15 +10,28 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
+import qs from "qs";
 
-export default function Portfolio() {
+export default function Portfolio({ images }) {
+  const photos = images.attributes.pildid.data.map((photo) => {
+    return {
+      src: photo.attributes.url,
+      width: photo.attributes.formats.medium.width,
+      height: photo.attributes.formats.medium.height,
+    };
+  });
+
   const [index, setIndex] = useState(-1);
   const animationDuration = 500;
-  const maxZoomPixelRatio = 10;
+  const maxZoomPixelRatio = 5;
   const zoomInMultiplier = 1;
   const wheelZoomDistanceFactor = 100;
   const pinchZoomDistanceFactor = 100;
   const scrollToZoom = true;
+  const doubleTapDelay = 300;
+  const doubleClickDelay = 300;
+  const doubleClickMaxStops = 5;
+  const keyboardMoveDistance = 40;
 
   return (
     <div>
@@ -59,7 +71,10 @@ export default function Portfolio() {
           zoom={{
             maxZoomPixelRatio,
             zoomInMultiplier,
-            animationDuration,
+            doubleTapDelay,
+            doubleClickDelay,
+            doubleClickMaxStops,
+            keyboardMoveDistance,
             wheelZoomDistanceFactor,
             pinchZoomDistanceFactor,
             scrollToZoom,
@@ -70,3 +85,36 @@ export default function Portfolio() {
     </div>
   );
 }
+
+export const getServerSideProps = async () => {
+  const query = qs.stringify(
+    {
+      populate: {
+        pildid: {
+          fields: ["url", "alternativeText", "formats"],
+        },
+      },
+    },
+    {
+      encodeValuesOnly: true, // prettify URL
+    }
+  );
+
+  const res = await fetch(
+    `https://api.maarikakauksi.com/api/galleries?${query}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+
+  const images = await res.json();
+
+  return {
+    props: {
+      images: images.data[0],
+    },
+  };
+};

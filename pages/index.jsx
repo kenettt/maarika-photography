@@ -4,6 +4,7 @@ import Header from "../components/header";
 import { HeartIcon, StarIcon, UserGroupIcon } from "@heroicons/react/20/solid";
 import Footer from "../components/footer";
 import Image from "next/image";
+import MailingList from "../components/mailingList";
 
 const navlinks = [
   {
@@ -17,6 +18,10 @@ const navlinks = [
   {
     name: "Kontakt",
     href: "/kontakt",
+  },
+  {
+    name: "Blogi",
+    href: "/blog",
   },
   {
     name: "Hinnakiri",
@@ -77,6 +82,7 @@ export default function Home() {
           />
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <MailingList />
           <div className="mx-auto max-w-2xl lg:mx-0">
             <p className="text-lg font-semibold leading-8 tracking-tight text-pink-400">
               Kaunid Mälestused, Püütud Pildina
