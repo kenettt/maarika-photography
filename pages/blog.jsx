@@ -156,8 +156,8 @@ export default function Home({ blogPosts }) {
           </div>
         </div>
         <Footer
-          className="z-20 w-full text-white justify-between"
-          color="fill-white hover:fill-[#ffc8d7] hover:scale-125"
+          className="z-20 w-full text-black dark:text-black justify-between dark:bg-white px-8 pb-4"
+          color="fill-black dark:fill-black hover:fill-[#ffc8d7] hover:scale-125"
         />
       </section>
     </div>
