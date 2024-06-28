@@ -104,7 +104,7 @@ const navigation = [
       </svg>
     ),
   },
-  {
+  /* {
     name: "Hinnakiri",
     href: "/hinnakiri",
     current: false,
@@ -125,7 +125,7 @@ const navigation = [
         />
       </svg>
     ),
-  },
+  }, */
 ];
 
 const socials = [

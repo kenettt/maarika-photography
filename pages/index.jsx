@@ -23,10 +23,10 @@ const navlinks = [
     name: "Blogi",
     href: "/blog",
   },
-  {
+  /*  {
     name: "Hinnakiri",
     href: "/hinnakiri",
-  },
+  }, */
 ];
 
 export default function Home() {
