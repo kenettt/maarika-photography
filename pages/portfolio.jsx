@@ -10,17 +10,11 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-import qs from "qs";
+import path from "path";
+import sizeOf from "image-size";
+import fs from "fs";
 
 export default function Portfolio({ images }) {
-  const photos = images.attributes.pildid.data.map((photo) => {
-    return {
-      src: photo.attributes.url,
-      width: photo.attributes.formats.medium.width,
-      height: photo.attributes.formats.medium.height,
-    };
-  });
-
   const [index, setIndex] = useState(-1);
   const animationDuration = 500;
   const maxZoomPixelRatio = 5;
@@ -59,11 +53,11 @@ export default function Portfolio({ images }) {
           spacing={2}
           layout="rows"
           targetRowHeight={570}
-          photos={photos}
+          photos={images}
           onClick={({ index }) => setIndex(index)}
         />
         <Lightbox
-          slides={photos}
+          slides={images}
           open={index >= 0}
           index={index}
           close={() => setIndex(-1)}
@@ -86,35 +80,35 @@ export default function Portfolio({ images }) {
   );
 }
 
-export const getServerSideProps = async () => {
-  const query = qs.stringify(
-    {
-      populate: {
-        pildid: {
-          fields: ["url", "alternativeText", "formats"],
-        },
-      },
-    },
-    {
-      encodeValuesOnly: true, // prettify URL
-    }
+export async function getStaticProps() {
+  const portfolioDirectory = path.join(
+    process.cwd(),
+    "public/images/portfolio"
   );
 
-  const res = await fetch(
-    `https://api.maarikakauksi.com/api/galleries?${query}`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  let images = [];
 
-  const images = await res.json();
+  // Check if the directory exists
+  if (fs.existsSync(portfolioDirectory)) {
+    const filenames = fs.readdirSync(portfolioDirectory);
+
+    images = filenames
+      .filter((file) => /\.(jpg|jpeg|png|gif|webp)$/.test(file)) // Filter only image files
+      .map((filename) => {
+        const filePath = path.join(portfolioDirectory, filename);
+        const dimensions = sizeOf(filePath); // Get dimensions using image-size
+
+        return {
+          src: `/images/portfolio/${filename}`,
+          width: dimensions.width, // Original width
+          height: dimensions.height, // Original height
+        };
+      });
+  }
 
   return {
     props: {
-      images: images.data[0],
+      images,
     },
   };
-};
+}

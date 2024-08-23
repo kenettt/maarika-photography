@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Footer from "../components/footer";
 import Header from "../components/header";
-import qs from "qs";
+import data from "../blog.json";
 import { useState } from "react";
 import MailingList from "../components/mailingList";
 const options = { month: "long", day: "numeric", year: "numeric" };
@@ -43,7 +43,7 @@ const filterPosts = (posts, selectedCategory) => {
   );
 };
 
-export default function Home({ blogPosts }) {
+export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   return (
@@ -81,7 +81,7 @@ export default function Home({ blogPosts }) {
             </div>
           </div>
           <div className="mt-10 space-y-20 lg:mt-16 lg:space-y-20 ">
-            {filterPosts(blogPosts, selectedCategory).map(
+            {filterPosts(data.blogPosts, selectedCategory).map(
               (
                 {
                   attributes: {
@@ -163,35 +163,3 @@ export default function Home({ blogPosts }) {
     </div>
   );
 }
-
-export const getStaticProps = async () => {
-  const query = qs.stringify(
-    {
-      fields: ["pealkiri", "slug", "kirjeldus", "kategooria", "createdAt"],
-      sort: ["createdAt:desc"],
-      populate: {
-        esifoto: {
-          fields: ["formats", "url", "alternativeText"],
-        },
-      },
-    },
-    {
-      encodeValuesOnly: true, // prettify URL
-    }
-  );
-
-  const res = await fetch(`https://api.maarikakauksi.com/api/blogs?${query}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  const blogPosts = await res.json();
-
-  return {
-    props: {
-      blogPosts: blogPosts.data,
-    },
-  };
-};
