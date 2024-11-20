@@ -74,7 +74,7 @@ export default function Portfolio({ images }) {
       </Head>
       <Header />
       <div className="lg:pl-[90px] min-h-screen h-screen w-full flex flex-col">
-        <div className="flex my-10 mx-4 sm:text-lg justify-center font-semibold max-w-[700px] mx-auto flex-wrap dark:text-black z-20">
+        <div className="flex my-10 mx-4 sm:text-lg justify-center font-semibold max-w-[700px] mx-auto flex-wrap dark:text-white z-20">
           {kategooria.map((category, index) => (
             <button
               key={index}
