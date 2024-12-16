@@ -5,14 +5,18 @@ import Footer from "../components/footer";
 
 export default function Kontakt() {
   const [sendMessage, toggleSendMessage] = useState(false);
+  const [isSending, setIsSending] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const sendMail = (e) => {
+  const sendMail = async (e) => {
     e.preventDefault();
+    if (isSending) return;
+
+    setIsSending(true);
     console.log("Sending");
 
     let data = {
@@ -44,6 +48,7 @@ export default function Kontakt() {
           toggleSendMessage(false);
         }, 6000);
       }
+      setIsSending(false);
     });
   };
 
@@ -173,6 +178,7 @@ export default function Kontakt() {
                   value="Saada sõnum"
                   type="submit"
                   className="text-white bg-blue-400 min-w-[82px] cursor-pointer z-30 mt-2 text-[9.6px] lg:text-base inline-flex items-center px-5  py-2 text-center justify-center font-bold rounded-full  shadow-sm  focus:outline-none focus:ring-2"
+                  disabled={isSending}
                 />
               </div>
               {sendMessage && (
